@@ -16,6 +16,6 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "arrow-parens": [true, "ban-single-arg-parens"]
+    "arrow-parens": ["error", "as-needed"]
   }
 }
