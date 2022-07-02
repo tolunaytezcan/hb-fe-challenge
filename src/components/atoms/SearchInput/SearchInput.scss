@@ -1,0 +1,19 @@
+@import 'styles/_variables';
+
+.searchIcon {
+  margin-right: 11.5px;
+}
+
+.searchInput {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: $grey-200;
+  font-weight: $fw-400;
+  font-size: $medium;
+
+  &:focus {
+    color: $grey-400;
+  }
+}
