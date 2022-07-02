@@ -1,0 +1,86 @@
+@import 'styles/_variables';
+
+.buttonContainer {
+  width: 100%;
+  min-width: 120px;
+  padding: $xsmall $xmedium;
+  cursor: pointer;
+  background-color: $white;
+  color: $grey-200;
+  border: 1px solid $grey-200;
+  border-radius: $xxxsmall;
+  font-size: $medium;
+  font-weight: $fw-400;
+  line-height: 24.31px;
+  position: relative;
+
+  &.buttonIcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .quantityBadge {
+    position: absolute;
+    z-index: 2;
+    width: $xmedium;
+    height: $xmedium;
+    border-radius: 50%;
+    padding: $xsmall;
+    top: -$xsmall;
+    right: -$xsmall;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $orange;
+    color: $white;
+    font-size: $medium;
+  }
+
+  &.orange {
+    background-color: $orange-100;
+    border: 1px solid transparent;
+    border-radius: $xxsmall;
+
+    span {
+      color: $orange;
+      font-size: $small;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: $grey-500;
+
+      span {
+        color: $grey-200;
+      }
+    }
+  }
+
+  &.accept {
+    background-color: $green;
+
+    span {
+      color: $white;
+    }
+  }
+
+  &.cancel {
+    background-color: $red-100;
+
+    span {
+      color: $white;
+    }
+  }
+
+  &.chartRemove {
+    background-color: $white;
+    border: 1px solid $red;
+    border-radius: 8px;
+
+    span {
+      color: $red;
+      font-size: $xsmall;
+    }
+  }
+}
