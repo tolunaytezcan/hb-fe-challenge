@@ -1,7 +1,7 @@
 import Button from 'components/atoms/Button/Button';
 import SearchInput from 'components/atoms/SearchInput/SearchInput';
 
-import style from './Header.module.scss';
+import style from 'components/organism/Header/Header.module.scss';
 import Logo from 'assets/Logo.svg';
 
 const Header = () => {

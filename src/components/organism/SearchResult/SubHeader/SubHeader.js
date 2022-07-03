@@ -1,6 +1,5 @@
-import Button from 'components/atoms/Button/Button';
+import Selectbox from 'components/molecules/Selectbox/Selectbox';
 
-import DownArrow from 'assets/DownArrow.svg';
 import style from 'components/organism/SearchResult/SubHeader/SubHeader.module.scss';
 
 const SubHeader = () => {
@@ -13,8 +12,8 @@ const SubHeader = () => {
           <span className={style.SearchText}>iphone 11</span>
         </span>
       </div>
-      <div className={style.SortingButtonContainer}>
-        <Button name="Sırala" icon={DownArrow}></Button>
+      <div>
+        <Selectbox />
       </div>
     </div>
   );
