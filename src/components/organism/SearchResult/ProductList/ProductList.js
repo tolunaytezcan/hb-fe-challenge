@@ -1,16 +1,30 @@
 import ProductCard from 'components/molecules/ProductCard/ProductCard';
-import { useProducts } from 'hooks';
+import { useProducts, useFilter } from 'hooks';
 
 import styles from 'components/organism/SearchResult/ProductList/ProductList.module.scss';
 
 const ProductList = () => {
   const { products, isLoading, isError } = useProducts();
+  const { selectedFilter, selectedProperty } = useFilter();
+
+  const filteredData =
+    selectedFilter || selectedProperty
+      ? products.filter(
+          product => product.color === selectedProperty || product.brand === selectedProperty
+        )
+      : products;
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error</div>;
+  }
 
   return (
     <div className={styles.productListContainer}>
-      {isLoading && <div>Loading...</div>}
-      {isError && <div>Error...</div>}
-      {products?.map(product => (
+      {(filteredData.length > 0 ? filteredData : products)?.map(product => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>

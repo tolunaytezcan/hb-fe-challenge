@@ -1,26 +1,30 @@
 import Filter from 'components/organism/SearchResult/SideBar/Filter/Filter.js';
+import { useProducts } from 'hooks';
+
 import style from 'components/organism/SearchResult/SideBar/SideBar.module.scss';
-import Sort from 'components/organism/SearchResult/SideBar/Sort/Sort.js';
+import { useMemo } from 'react';
+import Sort from './Sort/Sort';
 
 const SideBar = () => {
-  const colorCounts = {
-    Siyah: 6,
-    Yeşil: 6,
-    Mor: 4,
-    Kırmızı: 3,
-    Mavi: 8,
-    Gri: 2,
-    Pembe: 2,
-    Beyaz: 7
-  };
+  const { products } = useProducts();
 
-  const brandCounts = {
-    Apple: 14,
-    Samsung: 9,
-    Xiaomi: 6,
-    Huawei: 5,
-    Reeder: 4
-  };
+  const colorCounts = useMemo(
+    () =>
+      products.reduce((acc, product) => {
+        acc[product.color] ? acc[product.color]++ : (acc[product.color] = 1);
+        return acc;
+      }, {}),
+    [products]
+  );
+
+  const brandCounts = useMemo(
+    () =>
+      products.reduce((acc, product) => {
+        acc[product.brand] ? acc[product.brand]++ : (acc[product.brand] = 1);
+        return acc;
+      }, {}),
+    [products]
+  );
 
   return (
     <div className={style.sideBarContainer}>

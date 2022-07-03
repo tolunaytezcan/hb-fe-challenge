@@ -1,0 +1,30 @@
+@import 'styles/_variables';
+
+.SidebarContainer {
+  margin-bottom: $large;
+
+  .FilterName {
+    font-size: $medium;
+    font-weight: $fw-500;
+    line-height: $large;
+    margin-bottom: $xmedium;
+  }
+
+  .FilterList {
+    list-style: none;
+
+    .Element {
+      margin-bottom: 6px;
+      font-size: 15px;
+      line-height: 15px;
+
+      &:hover {
+        cursor: pointer;
+        color: $orange;
+      }
+    }
+    .Selected {
+      color: $orange;
+    }
+  }
+}
