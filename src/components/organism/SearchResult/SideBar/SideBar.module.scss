@@ -1,0 +1,9 @@
+@import 'styles/_variables';
+
+.sideBarContainer {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  padding: $xmedium $none;
+  top: $none;
+}

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import Button from 'components/atoms/Button/Button';
 
+import { selectboxOptions } from 'constants';
+
 import style from 'components/molecules/Selectbox/Selectbox.module.scss';
 import DownArrow from 'assets/DownArrow.svg';
 import SelectedIcon from 'assets/SelectedIcon.svg';
-import { selectboxOptions } from './constants';
 
 const Selectbox = () => {
   const [selected, setSelected] = useState(selectboxOptions[0].key);
