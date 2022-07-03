@@ -1,5 +1,39 @@
-const ProductCard = () => {
-  return <div>ProductCard</div>;
+import Button from 'components/atoms/Button/Button';
+import styles from 'components/molecules/ProductCard/ProductCard.module.scss';
+
+const ProductCard = ({ product }) => {
+  const formatter = new Intl.NumberFormat('tr-TR', {
+    minimumFractionDigits: 2
+  });
+
+  return (
+    <div className={styles.productCardContainer}>
+      <div className={styles.imageContainer}>
+        <img className={styles.image} src={product.images[0].image} alt={product.name} />
+      </div>
+      <div className={styles.productProperties}>
+        <p className={styles.productTitle}>{product.title}</p>
+        <p className={styles.productbrand}>
+          <span>Marka: </span>
+          {product.brand}
+        </p>
+        <p className={styles.productColor}>
+          <span>Renk: </span>
+          {product.color}
+        </p>
+        <p className={styles.discountedPrice}>
+          {formatter.format(product.price - Number(product.price * product.discountRate) / 100)} TL
+        </p>
+        <div className={styles.prevPriceContainer}>
+          <span className={styles.prevPrice}>{formatter.format(product.price)} TL</span>
+          <span className={styles.discountRate}>{product.discountRate}%</span>
+        </div>
+        <div className={styles.productCartButton}>
+          <Button name="Sepete ekle" type="orange" />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ProductCard;
