@@ -1,0 +1,30 @@
+@import 'styles/_variables';
+
+.SubHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $xmedium;
+}
+
+.SubHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.PageTitle {
+  color: $grey-400;
+  font-size: $xlarge;
+  font-weight: $fw-700;
+  line-height: 100%;
+}
+
+.SearchTextContainer {
+  font-size: $medium;
+  font-weight: $fw-400;
+  line-height: $medium;
+  color: $grey-200;
+}
+
+.SearchText {
+  color: $black;
+}
