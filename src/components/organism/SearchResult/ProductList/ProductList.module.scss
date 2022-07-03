@@ -1,0 +1,10 @@
+.productListContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
+  gap: 14px;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
