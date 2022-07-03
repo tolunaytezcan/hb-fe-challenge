@@ -1,0 +1,40 @@
+@import 'styles/_variables';
+
+.SelectboxContainer {
+  position: relative;
+  &:hover {
+    .SelectboxOptions {
+      display: block;
+    }
+  }
+}
+
+.SelectboxOptions {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  color: $white;
+  background-color: $black-100;
+  width: 170px;
+  height: auto;
+  z-index: 1;
+
+  .Option {
+    display: flex;
+    align-items: center;
+    padding: $xxxsmall;
+    gap: $xxxsmall;
+
+    .SelectedImage {
+      opacity: 1;
+    }
+    .UnselectedImage {
+      opacity: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $blue;
+    }
+  }
+}
