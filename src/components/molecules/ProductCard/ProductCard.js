@@ -1,10 +1,19 @@
 import Button from 'components/atoms/Button/Button';
 import styles from 'components/molecules/ProductCard/ProductCard.module.scss';
+import { useCart } from 'hooks';
 
 const ProductCard = ({ product }) => {
+  const { addProductToCart, cartProducts } = useCart();
+
   const formatter = new Intl.NumberFormat('tr-TR', {
     minimumFractionDigits: 2
   });
+
+  const handleAddToCart = () => {
+    addProductToCart(product);
+  };
+
+  const isProductInCart = cartProducts?.some(item => item.id === product.id);
 
   return (
     <div className={styles.productCardContainer}>
@@ -29,7 +38,12 @@ const ProductCard = ({ product }) => {
           <span className={styles.discountRate}>{product.discountRate}%</span>
         </div>
         <div className={styles.productCartButton}>
-          <Button name="Sepete ekle" type="orange" />
+          <Button
+            onClick={handleAddToCart}
+            disable={isProductInCart}
+            name={isProductInCart ? 'Bu ürün zaten sepetinizde' : 'Sepete Ekle'}
+            type="orange"
+          />
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ const Button = ({ name, badge, icon, type, onClick, disable }) => {
       className={`buttonContainer ${type || ''} ${icon && 'buttonIcon'}`}>
       <span>{name}</span>
       {icon && <img src={icon} alt="buttonIcon" />}
-      {badge && <span className="quantityBadge">{badge}</span>}
+      {badge > 0 && <span className="quantityBadge">{badge}</span>}
     </button>
   );
 };

@@ -6,6 +6,11 @@
   border: 1px solid $grey-200;
   max-height: 400px;
   overflow-y: auto;
+  .emptyCart {
+    overflow: hidden;
+    margin: 0px auto;
+    outline: none;
+  }
   .itemContainer {
     display: flex;
     padding-bottom: $xmedium;

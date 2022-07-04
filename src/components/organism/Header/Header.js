@@ -1,6 +1,6 @@
 import Button from 'components/atoms/Button/Button';
 import SearchInput from 'components/atoms/SearchInput/SearchInput';
-import { useFilter } from 'hooks';
+import { useFilter, useCart } from 'hooks';
 
 import style from 'components/organism/Header/Header.module.scss';
 import Logo from 'assets/Logo.svg';
@@ -8,6 +8,7 @@ import Cart from './Cart/Cart';
 
 const Header = () => {
   const { setSelectedFilter, setSelectedProperty } = useFilter();
+  const { cartProducts } = useCart();
 
   const handleClick = () => {
     setSelectedFilter('');
@@ -23,7 +24,7 @@ const Header = () => {
         <SearchInput />
       </div>
       <div className={style.cartContainer}>
-        <Button name="Sepetim" />
+        <Button name="Sepetim" badge={cartProducts?.length} />
         <div className={style.cart}>
           <Cart />
         </div>
