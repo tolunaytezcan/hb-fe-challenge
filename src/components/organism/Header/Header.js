@@ -4,6 +4,7 @@ import { useFilter } from 'hooks';
 
 import style from 'components/organism/Header/Header.module.scss';
 import Logo from 'assets/Logo.svg';
+import Cart from './Cart/Cart';
 
 const Header = () => {
   const { setSelectedFilter, setSelectedProperty } = useFilter();
@@ -23,6 +24,9 @@ const Header = () => {
       </div>
       <div className={style.cartContainer}>
         <Button name="Sepetim" />
+        <div className={style.cart}>
+          <Cart />
+        </div>
       </div>
     </div>
   );

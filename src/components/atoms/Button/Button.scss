@@ -76,11 +76,26 @@
   &.chartRemove {
     background-color: $white;
     border: 1px solid $red;
-    border-radius: 8px;
+    border-radius: $xxsmall;
+    min-width: 48px;
+    width: 48px;
+    height: $medium;
+    line-height: $medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     span {
       color: $red;
       font-size: $xsmall;
+    }
+
+    &:hover {
+      background-color: $red;
+
+      span {
+        color: $white;
+      }
     }
   }
 }

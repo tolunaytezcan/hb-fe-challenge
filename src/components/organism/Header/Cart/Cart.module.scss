@@ -1,0 +1,42 @@
+@import 'styles/_variables';
+
+.cartContainer {
+  background-color: $white;
+  padding: $xmedium;
+  border: 1px solid $grey-200;
+  max-height: 400px;
+  overflow-y: auto;
+  .itemContainer {
+    display: flex;
+    padding-bottom: $xmedium;
+    .imageContainer {
+      max-width: 54px;
+      height: 72px;
+      object-fit: contain;
+      flex: 1;
+      padding: $xxsmall;
+      margin-right: $xsmall;
+      border: 1px solid $orange-100;
+      border-radius: $xxxsmall;
+
+      .image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .titleAndButtonContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      font-size: $xsmall;
+      .title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}
