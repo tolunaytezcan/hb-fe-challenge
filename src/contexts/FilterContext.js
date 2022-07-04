@@ -1,14 +1,20 @@
-import { useState, createContext } from 'react';
+import { useState, createContext, useEffect } from 'react';
 
 const FilterContext = createContext();
 
 export default FilterContext;
 
 export const FilterProvider = ({ children }) => {
-  const [selectedFilter, setSelectedFilter] = useState('');
-  const [selectedProperty, setSelectedProperty] = useState('');
+  const [selectedFilters, setSelectedFilters] = useState({
+    color: '',
+    brand: ''
+  });
 
-  const values = { selectedFilter, setSelectedFilter, selectedProperty, setSelectedProperty };
+  useEffect(() => {
+    console.log(selectedFilters);
+  }, [selectedFilters]);
+
+  const values = { selectedFilters, setSelectedFilters };
 
   return <FilterContext.Provider value={values}>{children}</FilterContext.Provider>;
 };

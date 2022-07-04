@@ -1,11 +1,11 @@
+import { memo, useMemo } from 'react';
 import Filter from 'components/organism/SearchResult/SideBar/Filter/Filter.js';
 import { useProducts } from 'hooks';
 
 import style from 'components/organism/SearchResult/SideBar/SideBar.module.scss';
-import { useMemo } from 'react';
 import Sort from './Sort/Sort';
 
-const SideBar = () => {
+const SideBar = memo(() => {
   const { products } = useProducts();
 
   const colorCounts = useMemo(
@@ -28,11 +28,11 @@ const SideBar = () => {
 
   return (
     <div className={style.sideBarContainer}>
-      <Filter data={colorCounts} filterName="Renk" />
+      <Filter data={colorCounts} filterKey="color" filterName="Renk" />
       <Sort />
-      <Filter data={brandCounts} filterName="Marka" />
+      <Filter data={brandCounts} filterKey="brand" filterName="Marka" />
     </div>
   );
-};
+});
 
 export default SideBar;

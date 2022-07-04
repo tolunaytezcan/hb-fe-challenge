@@ -1,18 +1,17 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { useFilter } from 'hooks';
 
 import styles from './Filter.module.scss';
 
-const Filter = ({ data, filterName }) => {
-  const { setSelectedFilter, selectedProperty, setSelectedProperty } = useFilter();
+const Filter = memo(({ data, filterName, filterKey }) => {
+  const { selectedFilters, setSelectedFilters } = useFilter();
 
-  const handleClick = property => {
-    setSelectedFilter(filterName);
-    setSelectedProperty(property);
+  const handleClick = (filterKey, key) => {
+    setSelectedFilters(prev => ({ ...prev, [filterKey]: key }));
   };
 
   const filteredData = useMemo(() =>
-    Object.keys(data).map(key => {
+    Object.keys(data || []).map(key => {
       return {
         property: key,
         count: data[key]
@@ -27,16 +26,16 @@ const Filter = ({ data, filterName }) => {
         {filteredData?.map(item => (
           <li
             className={`${styles.Element} ${
-              selectedProperty === item.property ? styles.Selected : ''
+              selectedFilters[filterKey] === item.property ? styles.Selected : ''
             }`}
             key={item.property}
-            onClick={() => handleClick(item.property)}>
+            onClick={() => handleClick(filterKey, item.property)}>
             <span>{item.property}</span> <span>({item.count})</span>
           </li>
         ))}
       </ul>
     </div>
   );
-};
+});
 
 export default Filter;

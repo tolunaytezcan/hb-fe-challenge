@@ -7,12 +7,11 @@ import Logo from 'assets/Logo.svg';
 import Cart from './Cart/Cart';
 
 const Header = () => {
-  const { setSelectedFilter, setSelectedProperty } = useFilter();
+  const { setSelectedFilters } = useFilter();
   const { cartProducts } = useCart();
 
   const handleClick = () => {
-    setSelectedFilter('');
-    setSelectedProperty('');
+    setSelectedFilters({ color: '', brand: '' });
   };
 
   return (
