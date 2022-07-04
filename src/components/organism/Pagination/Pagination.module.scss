@@ -1,0 +1,49 @@
+@import 'styles/_variables';
+
+.PaginationContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: $xxlarge;
+
+  .numberButton,
+  .arrowButton {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    color: $grey-300;
+    border: 1px solid $grey;
+    border-radius: $xxsmall;
+    cursor: pointer;
+    padding: $xxsmall $medium;
+    font-size: $xsmall;
+    line-height: $xmedium;
+    margin-right: $xxxsmall;
+
+    &:hover {
+      border: 1px solid $orange;
+    }
+  }
+
+  .FirstArrow {
+    margin-right: $xsmall;
+  }
+
+  .LastArrow {
+    margin-left: $xsmall;
+  }
+  .PaginationList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    .activeNumber {
+      .numberButton {
+        background-color: $orange;
+        color: $white;
+        border: 1px solid transparent;
+      }
+    }
+  }
+}

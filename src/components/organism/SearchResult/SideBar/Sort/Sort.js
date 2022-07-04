@@ -3,7 +3,7 @@ import styles from './Sort.module.scss';
 
 const Sort = () => {
   const handleClick = option => {
-    console.log('option:', option)(option);
+    console.log('option:', option);
   };
 
   return (
