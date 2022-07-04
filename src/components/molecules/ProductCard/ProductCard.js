@@ -41,7 +41,7 @@ const ProductCard = ({ product }) => {
           <Button
             onClick={handleAddToCart}
             disable={isProductInCart}
-            name={isProductInCart ? 'Bu ürün zaten sepetinizde' : 'Sepete Ekle'}
+            name={isProductInCart ? 'Bu ürün zaten sepetinizde ekli' : 'Sepete Ekle'}
             type="orange"
           />
         </div>

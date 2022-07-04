@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
+import { useDisclosure } from 'hooks';
 
 const CartContext = createContext();
 
@@ -6,6 +7,8 @@ export default CartContext;
 
 export const CartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
+  const [deletedProduct, setDeletedProduct] = useState();
+  const { isOpen: modalVisibility, onOpen: onOpenModal, onClose: onCloseModal } = useDisclosure();
 
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem('cartProducts'));
@@ -17,19 +20,28 @@ export const CartProvider = ({ children }) => {
   }, [cartProducts]);
 
   const addProductToCart = newProduct => {
-    if (!cartProducts.some(item => item.id === newProduct.id))
-      return setCartProducts([...cartProducts, newProduct]);
+    if (!cartProducts.some(product => product.id === newProduct.id)) {
+      setCartProducts([...cartProducts, newProduct]);
+    }
   };
 
   const removeProductFromCart = productId => {
-    return setCartProducts(cartProducts.filter(item => item.id !== productId));
+    setDeletedProduct(productId);
+    onOpenModal();
   };
-
+  const confirmRemoveProduct = confirm => {
+    confirm && setCartProducts(cartProducts.filter(product => product.id !== deletedProduct));
+    onCloseModal();
+  };
   const values = {
     cartProducts,
     setCartProducts,
     addProductToCart,
-    removeProductFromCart
+    removeProductFromCart,
+    modalVisibility,
+    onOpenModal,
+    onCloseModal,
+    confirmRemoveProduct
   };
 
   return <CartContext.Provider value={values}>{children}</CartContext.Provider>;

@@ -26,5 +26,3 @@ export const useDisclosure = isOpenInit => {
 
   return { isOpen, onOpen, onClose, onToggle };
 };
-
-export default useDisclosure;
