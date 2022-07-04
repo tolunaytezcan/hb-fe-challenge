@@ -1,17 +1,17 @@
-import { useState } from 'react';
 import Button from 'components/atoms/Button/Button';
 
 import { selectboxOptions } from 'constants';
+import { useFilter } from 'hooks';
 
 import style from 'components/molecules/Selectbox/Selectbox.module.scss';
 import DownArrow from 'assets/DownArrow.svg';
 import SelectedIcon from 'assets/SelectedIcon.svg';
 
 const Selectbox = () => {
-  const [selected, setSelected] = useState(selectboxOptions[0].key);
+  const { selectedFilters, setSelectedFilters } = useFilter();
 
-  const handleClick = option => {
-    setSelected(option);
+  const handleClick = sortOption => {
+    setSelectedFilters(prev => ({ ...prev, sortOption }));
   };
 
   return (
@@ -23,7 +23,11 @@ const Selectbox = () => {
             <img
               src={SelectedIcon}
               alt="SelectedIcon"
-              className={selected === option.key ? style.SelectedImage : style.UnselectedImage}
+              className={
+                selectedFilters.sortOption === option.key
+                  ? style.SelectedImage
+                  : style.UnselectedImage
+              }
             />
 
             <span>{option.text}</span>

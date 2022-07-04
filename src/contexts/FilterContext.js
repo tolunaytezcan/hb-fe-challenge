@@ -7,7 +7,8 @@ export default FilterContext;
 export const FilterProvider = ({ children }) => {
   const [selectedFilters, setSelectedFilters] = useState({
     color: '',
-    brand: ''
+    brand: '',
+    sortOption: 'lowToHigh'
   });
 
   const values = { selectedFilters, setSelectedFilters };
