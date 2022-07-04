@@ -5,8 +5,9 @@ import styles from './Sort.module.scss';
 const Sort = () => {
   const { selectedFilters, setSelectedFilters } = useFilter();
 
-  const handleClick = sortOption => {
-    setSelectedFilters(prev => ({ ...prev, sortOption }));
+  const handleClick = sort => {
+    if (selectedFilters.sort === sort) setSelectedFilters(prev => ({ ...prev, sort: '' }));
+    else setSelectedFilters(prev => ({ ...prev, sort }));
   };
 
   return (
@@ -16,7 +17,7 @@ const Sort = () => {
         {selectboxOptions?.map(option => (
           <li
             className={`${styles.Element} ${
-              selectedFilters.sortOption === option.key ? styles.Selected : ''
+              selectedFilters.sort === option.key ? styles.Selected : ''
             }`}
             key={option.key}
             onClick={() => handleClick(option.key)}>

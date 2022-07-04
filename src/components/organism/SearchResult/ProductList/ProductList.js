@@ -18,7 +18,7 @@ const ProductList = () => {
 
   const paginate = pageNumber => {
     setCurrentPage(pageNumber);
-    history.push(`/?page=${pageNumber}`);
+    history.push(`${history?.location?.pathname}?page=${pageNumber}`);
   };
 
   if (isLoading) {

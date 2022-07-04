@@ -11,7 +11,7 @@ const Header = () => {
   const { cartProducts } = useCart();
 
   const handleClick = () => {
-    setSelectedFilters({ color: '', brand: '' });
+    setSelectedFilters({ color: '', brand: '', sort: '' });
   };
 
   return (

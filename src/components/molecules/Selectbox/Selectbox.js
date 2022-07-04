@@ -24,9 +24,7 @@ const Selectbox = () => {
               src={SelectedIcon}
               alt="SelectedIcon"
               className={
-                selectedFilters.sortOption === option.key
-                  ? style.SelectedImage
-                  : style.UnselectedImage
+                selectedFilters.sort === option.key ? style.SelectedImage : style.UnselectedImage
               }
             />
 

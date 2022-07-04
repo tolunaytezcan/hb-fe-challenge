@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const FilterContext = createContext();
 
@@ -8,8 +9,15 @@ export const FilterProvider = ({ children }) => {
   const [selectedFilters, setSelectedFilters] = useState({
     color: '',
     brand: '',
-    sortOption: 'lowToHigh'
+    sort: ''
   });
+  const history = useHistory();
+
+  useEffect(() => {
+    history.push(
+      `/?brand=${selectedFilters.brand}&color=${selectedFilters.color}&sort=${selectedFilters.sort}`
+    );
+  }, [selectedFilters]);
 
   const values = { selectedFilters, setSelectedFilters };
 

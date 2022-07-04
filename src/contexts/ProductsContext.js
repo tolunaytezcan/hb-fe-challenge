@@ -11,11 +11,33 @@ export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-
   const { selectedFilters } = useFilter();
+
   const colorFilter = selectedFilters?.color?.length > 0 ? `color=${selectedFilters.color}` : '';
   const brandFilter = selectedFilters?.brand?.length > 0 ? `brand=${selectedFilters.brand}` : '';
-  const filteredURL = `${baseURL}?&${colorFilter}&${brandFilter}`;
+
+  let sortOption = '';
+
+  switch (selectedFilters?.sort) {
+    case 'asc':
+      sortOption = `_sort=price&_order=${selectedFilters.sort}`;
+      break;
+    case 'desc':
+      sortOption = `_sort=price&_order=${selectedFilters.sort}`;
+      break;
+
+    case 'newest':
+      sortOption = `_sort=createdDate&_order=desc`;
+      break;
+
+    case 'oldest':
+      sortOption = `_sort=createdDate&_order=asc`;
+      break;
+  }
+
+  const sort = selectedFilters?.sort?.length > 0 ? `${sortOption}` : '';
+
+  const filteredURL = `${baseURL}?${brandFilter}&${colorFilter}&${sort}`;
 
   const getData = async url => {
     setIsLoading(true);
