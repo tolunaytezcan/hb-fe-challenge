@@ -26,5 +26,11 @@
     .Selected {
       color: $orange;
     }
+    .SelectedIcon {
+      background-color: $orange;
+      width: $xsmall;
+      height: $xsmall;
+      margin-right: $xxxsmall;
+    }
   }
 }

@@ -2,12 +2,17 @@ import { memo, useMemo } from 'react';
 import { useFilter } from 'hooks';
 
 import styles from './Filter.module.scss';
+import SelectedIcon from 'assets/SelectedIcon.svg';
 
 const Filter = memo(({ data, filterName, filterKey }) => {
   const { selectedFilters, setSelectedFilters } = useFilter();
 
-  const handleClick = (filterKey, key) => {
-    setSelectedFilters(prev => ({ ...prev, [filterKey]: key }));
+  const handleClick = (filterKey, property) => {
+    if (selectedFilters[filterKey] === property) {
+      setSelectedFilters(prev => ({ ...prev, [filterKey]: '' }));
+    } else {
+      setSelectedFilters(prev => ({ ...prev, [filterKey]: property }));
+    }
   };
 
   const filteredData = useMemo(() =>
@@ -30,7 +35,13 @@ const Filter = memo(({ data, filterName, filterKey }) => {
             }`}
             key={item.property}
             onClick={() => handleClick(filterKey, item.property)}>
-            <span>{item.property}</span> <span>({item.count})</span>
+            {selectedFilters[filterKey] === item.property && (
+              <span>
+                <img src={SelectedIcon} alt="SelectedIcon" className={styles.SelectedIcon} />
+              </span>
+            )}
+            <span>{item.property}</span>
+            <span>({item.count})</span>
           </li>
         ))}
       </ul>
