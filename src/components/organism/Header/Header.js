@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Button from 'components/atoms/Button/Button';
 import SearchInput from 'components/atoms/SearchInput/SearchInput';
 import { useFilter, useCart } from 'hooks';
@@ -9,9 +10,11 @@ import Cart from './Cart/Cart';
 const Header = () => {
   const { setSelectedFilters } = useFilter();
   const { cartProducts } = useCart();
+  const [searchText, setSearchText] = useState('');
 
   const handleClick = () => {
-    setSelectedFilters({ color: '', brand: '', sort: '' });
+    setSelectedFilters({ color: '', brand: '', sort: '', search: '' });
+    setSearchText('');
   };
 
   return (
@@ -20,7 +23,7 @@ const Header = () => {
         <img className={style.hbLogo} src={Logo} alt="Logo icon" />
       </div>
       <div className={style.searchInputContainer}>
-        <SearchInput />
+        <SearchInput searchText={searchText} setSearchText={setSearchText} />
       </div>
       <div className={style.cartContainer}>
         <Button name="Sepetim" badge={cartProducts?.length} />

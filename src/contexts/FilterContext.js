@@ -9,13 +9,14 @@ export const FilterProvider = ({ children }) => {
   const [selectedFilters, setSelectedFilters] = useState({
     color: '',
     brand: '',
-    sort: ''
+    sort: '',
+    search: ''
   });
   const history = useHistory();
 
   useEffect(() => {
     history.push(
-      `/?brand=${selectedFilters.brand}&color=${selectedFilters.color}&sort=${selectedFilters.sort}`
+      `/?brand=${selectedFilters.brand}&color=${selectedFilters.color}&sort=${selectedFilters.sort}&search=${selectedFilters.search}`
     );
   }, [selectedFilters]);
 

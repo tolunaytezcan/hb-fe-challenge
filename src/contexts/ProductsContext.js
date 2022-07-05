@@ -15,6 +15,8 @@ export const ProductsProvider = ({ children }) => {
 
   const colorFilter = selectedFilters?.color?.length > 0 ? `color=${selectedFilters.color}` : '';
   const brandFilter = selectedFilters?.brand?.length > 0 ? `brand=${selectedFilters.brand}` : '';
+  const searchFilter =
+    selectedFilters?.search?.length > 2 ? `title_like=${selectedFilters.search}` : '';
 
   let sortOption = '';
 
@@ -37,7 +39,7 @@ export const ProductsProvider = ({ children }) => {
 
   const sort = selectedFilters?.sort?.length > 0 ? `${sortOption}` : '';
 
-  const filteredURL = `${baseURL}?${brandFilter}&${colorFilter}&${sort}`;
+  const filteredURL = `${baseURL}?${brandFilter}&${colorFilter}&${sort}&${searchFilter}`;
 
   const getData = async url => {
     setIsLoading(true);

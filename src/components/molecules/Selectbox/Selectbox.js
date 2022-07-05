@@ -10,8 +10,8 @@ import SelectedIcon from 'assets/SelectedIcon.svg';
 const Selectbox = () => {
   const { selectedFilters, setSelectedFilters } = useFilter();
 
-  const handleClick = sortOption => {
-    setSelectedFilters(prev => ({ ...prev, sortOption }));
+  const handleClick = sort => {
+    setSelectedFilters(prev => ({ ...prev, sort }));
   };
 
   return (
