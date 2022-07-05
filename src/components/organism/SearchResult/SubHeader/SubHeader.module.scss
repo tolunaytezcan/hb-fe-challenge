@@ -4,28 +4,49 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: $xmedium;
-}
 
-.SubHeader {
-  display: flex;
-  flex-direction: column;
-}
+  .SubHeader {
+    display: flex;
+    flex-direction: column;
+  }
 
-.PageTitle {
-  color: $grey-400;
-  font-size: $xlarge;
-  font-weight: $fw-700;
-  line-height: 100%;
-  margin-bottom: $xxxsmall;
-}
+  .PageTitle {
+    color: $grey-400;
+    font-size: $xlarge;
+    font-weight: $fw-700;
+    line-height: 100%;
+    margin-bottom: $xxxsmall;
+  }
 
-.SearchTextContainer {
-  font-size: $medium;
-  font-weight: $fw-400;
-  line-height: $medium;
-  color: $grey-200;
-}
+  .SearchTextContainer {
+    font-size: $medium;
+    font-weight: $fw-400;
+    line-height: $medium;
+    color: $grey-200;
+  }
 
-.SearchText {
-  color: $black;
+  .SearchText {
+    color: $black;
+  }
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+
+    .SubHeader {
+      width: 100%;
+      align-items: center;
+      margin-bottom: $medium;
+    }
+
+    .PageTitle {
+      font-size: $large;
+      margin-bottom: $xxxsmall;
+    }
+
+    .SearchTextContainer {
+      font-size: $medium;
+      line-height: $medium;
+    }
+  }
 }

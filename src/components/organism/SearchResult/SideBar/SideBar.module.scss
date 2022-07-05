@@ -6,4 +6,11 @@
   position: sticky;
   padding: $xmedium $none;
   top: $none;
+
+  @media (max-width: 500px) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

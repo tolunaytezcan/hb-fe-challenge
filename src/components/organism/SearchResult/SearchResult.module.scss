@@ -3,14 +3,22 @@
 .searchResultWrapper {
   margin: 17px 80px 0px 81px;
   padding-bottom: $xxlarge;
-}
 
-.filterAndProducts {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  gap: 10px;
-  max-width: 1300px;
+  .filterAndProducts {
+    display: flex;
+    gap: 10px;
+  }
+
+  @media (min-width: 1920px) {
+    display: grid;
+    justify-items: center;
+  }
+
   @media (max-width: 500px) {
-    grid-template-columns: 1fr;
+    margin: 24px;
+    .filterAndProducts {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
