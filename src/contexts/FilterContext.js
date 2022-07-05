@@ -6,6 +6,7 @@ const FilterContext = createContext();
 export default FilterContext;
 
 export const FilterProvider = ({ children }) => {
+  const history = useHistory();
   const [selectedFilters, setSelectedFilters] = useState({
     color: '',
     brand: '',
@@ -13,7 +14,16 @@ export const FilterProvider = ({ children }) => {
     search: '',
     page: 1
   });
-  const history = useHistory();
+
+  const clearFilters = () => {
+    setSelectedFilters({
+      color: '',
+      brand: '',
+      sort: '',
+      search: '',
+      page: 1
+    });
+  };
 
   useEffect(() => {
     history.push(
@@ -21,7 +31,7 @@ export const FilterProvider = ({ children }) => {
     );
   }, [selectedFilters]);
 
-  const values = { selectedFilters, setSelectedFilters };
+  const values = { selectedFilters, setSelectedFilters, clearFilters };
 
   return <FilterContext.Provider value={values}>{children}</FilterContext.Provider>;
 };

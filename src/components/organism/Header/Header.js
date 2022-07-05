@@ -8,12 +8,12 @@ import Logo from 'assets/Logo.svg';
 import Cart from './Cart/Cart';
 
 const Header = () => {
-  const { setSelectedFilters } = useFilter();
+  const { clearFilters } = useFilter();
   const { cartProducts } = useCart();
   const [searchText, setSearchText] = useState('');
 
   const handleClick = () => {
-    setSelectedFilters({ color: '', brand: '', sort: '', search: '', page: 1 });
+    clearFilters();
     setSearchText('');
   };
 
