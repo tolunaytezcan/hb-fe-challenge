@@ -11,12 +11,12 @@ export const CartProvider = ({ children }) => {
   const { isOpen: modalVisibility, onOpen: onOpenModal, onClose: onCloseModal } = useDisclosure();
 
   useEffect(() => {
-    const storedProducts = JSON.parse(localStorage.getItem('cartProducts'));
-    setCartProducts(storedProducts);
+    const storedProducts = JSON.parse(window.localStorage.getItem('cartProducts'));
+    setCartProducts(storedProducts ?? []);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+    window.localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
   }, [cartProducts]);
 
   const addProductToCart = newProduct => {
