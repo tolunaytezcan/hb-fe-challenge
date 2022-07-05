@@ -5,6 +5,7 @@
   font-size: $xsmall;
   line-height: $xmedium;
   position: relative;
+  max-width: 250px;
 
   &:hover {
     border: 1px solid $grey-600;
