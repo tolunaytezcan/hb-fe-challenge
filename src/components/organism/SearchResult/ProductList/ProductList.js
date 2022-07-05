@@ -60,6 +60,7 @@ const ProductList = () => {
 
   const paginate = pageNumber => {
     setSelectedFilters({ ...selectedFilters, page: pageNumber });
+    window.scrollTo(0, 0);
   };
 
   return (
