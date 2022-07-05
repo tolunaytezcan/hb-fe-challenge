@@ -9,9 +9,9 @@ const Filter = memo(({ data, filterName, filterKey }) => {
 
   const handleClick = (filterKey, property) => {
     if (selectedFilters[filterKey] === property) {
-      setSelectedFilters(prev => ({ ...prev, [filterKey]: '' }));
+      setSelectedFilters(prev => ({ ...prev, [filterKey]: '', page: 1 }));
     } else {
-      setSelectedFilters(prev => ({ ...prev, [filterKey]: property }));
+      setSelectedFilters(prev => ({ ...prev, [filterKey]: property, page: 1 }));
     }
   };
 

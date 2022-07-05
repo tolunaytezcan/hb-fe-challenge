@@ -1,5 +1,6 @@
-import Button from 'components/atoms/Button/Button';
+import { memo } from 'react';
 
+import Button from 'components/atoms/Button/Button';
 import { selectboxOptions } from 'constants';
 import { useFilter } from 'hooks';
 
@@ -7,7 +8,7 @@ import style from 'components/molecules/Selectbox/Selectbox.module.scss';
 import DownArrow from 'assets/DownArrow.svg';
 import SelectedIcon from 'assets/SelectedIcon.svg';
 
-const Selectbox = () => {
+const Selectbox = memo(() => {
   const { selectedFilters, setSelectedFilters } = useFilter();
 
   const handleClick = sort => {
@@ -34,6 +35,6 @@ const Selectbox = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Selectbox;

@@ -1,9 +1,11 @@
+import { memo } from 'react';
+
 import Button from 'components/atoms/Button/Button.js';
 
 import styles from 'components/atoms/Modal/Modal.module.scss';
 import { useCart } from 'hooks';
 
-const Modal = ({ title, text }) => {
+const Modal = memo(({ title, text }) => {
   const { modalVisibility, confirmRemoveProduct } = useCart();
 
   return (
@@ -27,6 +29,6 @@ const Modal = ({ title, text }) => {
       )}
     </>
   );
-};
+});
 
 export default Modal;

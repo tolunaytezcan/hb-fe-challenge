@@ -1,6 +1,8 @@
+import { memo } from 'react';
+
 import './Button.scss';
 
-const Button = ({ name, badge, icon, type, onClick, disable }) => {
+const Button = memo(({ name, badge, icon, type, onClick, disable }) => {
   return (
     <button
       onClick={onClick}
@@ -11,6 +13,6 @@ const Button = ({ name, badge, icon, type, onClick, disable }) => {
       {badge > 0 && <span className="quantityBadge">{badge}</span>}
     </button>
   );
-};
+});
 
 export default Button;

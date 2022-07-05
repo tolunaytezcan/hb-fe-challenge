@@ -1,11 +1,11 @@
-import React from 'react';
+import { memo } from 'react';
 import Button from 'components/atoms/Button/Button';
 import style from 'components/organism/Header/Cart/Cart.module.scss';
 import { useCart } from 'hooks';
 
 import CartBasket from 'assets/CartBasket.svg';
 
-const Cart = () => {
+const Cart = memo(() => {
   const { cartProducts, removeProductFromCart } = useCart();
 
   const handleRemoveProduct = productId => {
@@ -46,6 +46,6 @@ const Cart = () => {
       ))}
     </div>
   );
-};
+});
 
 export default Cart;

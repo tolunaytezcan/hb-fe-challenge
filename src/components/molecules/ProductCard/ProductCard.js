@@ -1,8 +1,10 @@
+import { memo } from 'react';
+
 import Button from 'components/atoms/Button/Button';
 import styles from 'components/molecules/ProductCard/ProductCard.module.scss';
 import { useCart } from 'hooks';
 
-const ProductCard = ({ product }) => {
+const ProductCard = memo(({ product }) => {
   const { addProductToCart, cartProducts } = useCart();
 
   const formatter = new Intl.NumberFormat('tr-TR', {
@@ -52,6 +54,6 @@ const ProductCard = ({ product }) => {
       </div>
     </div>
   );
-};
+});
 
 export default ProductCard;

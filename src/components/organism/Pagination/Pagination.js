@@ -1,7 +1,7 @@
-import React from 'react';
+import { memo } from 'react';
 import styles from 'components/organism/Pagination/Pagination.module.scss';
 
-const Pagination = ({ currentPage, numberOfPages, paginate }) => {
+const Pagination = memo(({ currentPage, numberOfPages, paginate }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= numberOfPages; i++) {
@@ -52,6 +52,6 @@ const Pagination = ({ currentPage, numberOfPages, paginate }) => {
       </span>
     </div>
   );
-};
+});
 
-export default React.memo(Pagination);
+export default Pagination;

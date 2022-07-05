@@ -1,8 +1,11 @@
+import { memo } from 'react';
+
 import { selectboxOptions } from 'constants';
 import { useFilter } from 'hooks';
+
 import styles from './Sort.module.scss';
 
-const Sort = () => {
+const Sort = memo(() => {
   const { selectedFilters, setSelectedFilters } = useFilter();
 
   const handleClick = sort => {
@@ -27,6 +30,6 @@ const Sort = () => {
       </ul>
     </div>
   );
-};
+});
 
 export default Sort;

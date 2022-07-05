@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { memo } from 'react';
 
 import ProductCard from 'components/molecules/ProductCard/ProductCard';
 import Pagination from 'components/organism/Pagination/Pagination';
@@ -9,21 +9,9 @@ import Search from 'assets/Search.svg';
 import Spinner from 'assets/Spinner.svg';
 import NoResult from 'assets/NoResult.svg';
 
-const ProductList = () => {
+const ProductList = memo(() => {
   const { products, isLoading, isError } = useProducts();
   const { selectedFilters, setSelectedFilters } = useFilter();
-
-  useEffect(() => {
-    //  When the user uses filtering, pagination, and search at the same time,
-    //  we're redirecting the page count to 1.
-
-    if (products?.length < 12) {
-      setSelectedFilters(prev => ({ ...prev, page: 1 }));
-    }
-    if (products?.length > 12 && selectedFilters.page > 1) {
-      setSelectedFilters(prev => ({ ...prev, page: 1 }));
-    }
-  }, [products]);
 
   const lastIndex = selectedFilters.page * 12;
   const firstIndex = lastIndex - 12;
@@ -85,6 +73,6 @@ const ProductList = () => {
       </div>
     </div>
   );
-};
+});
 
 export default ProductList;

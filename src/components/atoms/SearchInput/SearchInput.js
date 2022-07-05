@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 
 import './SearchInput.scss';
 import Search from 'assets/Search.svg';
 import { useFilter } from 'hooks';
 
-const SearchInput = ({ searchText, setSearchText }) => {
+const SearchInput = memo(({ searchText, setSearchText }) => {
   const { setSelectedFilters } = useFilter();
 
   useEffect(() => {
@@ -37,6 +37,6 @@ const SearchInput = ({ searchText, setSearchText }) => {
       />
     </>
   );
-};
+});
 
 export default SearchInput;

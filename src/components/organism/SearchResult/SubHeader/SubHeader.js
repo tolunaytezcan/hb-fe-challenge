@@ -1,9 +1,11 @@
+import { memo } from 'react';
+
 import Selectbox from 'components/molecules/Selectbox/Selectbox';
 import { useFilter } from 'hooks';
 
 import style from 'components/organism/SearchResult/SubHeader/SubHeader.module.scss';
 
-const SubHeader = () => {
+const SubHeader = memo(() => {
   const { selectedFilters } = useFilter();
   return (
     <div className={style.SubHeaderContainer}>
@@ -23,6 +25,6 @@ const SubHeader = () => {
       </div>
     </div>
   );
-};
+});
 
 export default SubHeader;
