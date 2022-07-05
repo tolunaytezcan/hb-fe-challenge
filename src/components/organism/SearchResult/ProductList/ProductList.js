@@ -3,14 +3,16 @@ import { useHistory } from 'react-router-dom';
 
 import ProductCard from 'components/molecules/ProductCard/ProductCard';
 import Pagination from 'components/organism/Pagination/Pagination';
-import { useProducts } from 'hooks';
+import { useFilter, useProducts } from 'hooks';
 
 import styles from 'components/organism/SearchResult/ProductList/ProductList.module.scss';
+import Search from 'assets/Search.svg';
 
 const ProductList = () => {
   const history = useHistory();
   const { products, isLoading, isError } = useProducts();
   const [currentPage, setCurrentPage] = useState(1);
+  const { selectedFilters } = useFilter();
 
   const lastIndex = currentPage * 12;
   const firstIndex = lastIndex - 12;
@@ -27,6 +29,19 @@ const ProductList = () => {
 
   if (isError) {
     return <div>Error</div>;
+  }
+
+  if (results.length === 0) {
+    return (
+      <div className={styles.NoResultWrapper}>
+        <div className={styles.NoResultContainer}>
+          <img src={Search} alt="No Product" width={72} height={72} />
+          <span className={styles.NoResultText}>
+            {selectedFilters?.search} ile ilgili sonuç bulunamamıştır.
+          </span>
+        </div>
+      </div>
+    );
   }
 
   return (
