@@ -10,13 +10,14 @@ export const FilterProvider = ({ children }) => {
     color: '',
     brand: '',
     sort: '',
-    search: ''
+    search: '',
+    page: 1
   });
   const history = useHistory();
 
   useEffect(() => {
     history.push(
-      `/?brand=${selectedFilters.brand}&color=${selectedFilters.color}&sort=${selectedFilters.sort}&search=${selectedFilters.search}`
+      `/?brand=${selectedFilters.brand}&color=${selectedFilters.color}&sort=${selectedFilters.sort}&search=${selectedFilters.search}&_limit=12&page=${selectedFilters.page}`
     );
   }, [selectedFilters]);
 

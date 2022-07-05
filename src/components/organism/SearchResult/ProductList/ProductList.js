@@ -1,26 +1,28 @@
-import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-
 import ProductCard from 'components/molecules/ProductCard/ProductCard';
 import Pagination from 'components/organism/Pagination/Pagination';
 import { useFilter, useProducts } from 'hooks';
 
 import styles from 'components/organism/SearchResult/ProductList/ProductList.module.scss';
 import Search from 'assets/Search.svg';
+import { useEffect } from 'react';
 
 const ProductList = () => {
-  const history = useHistory();
   const { products, isLoading, isError } = useProducts();
-  const [currentPage, setCurrentPage] = useState(1);
-  const { selectedFilters } = useFilter();
+  const { selectedFilters, setSelectedFilters } = useFilter();
 
-  const lastIndex = currentPage * 12;
+  useEffect(() => {
+    if (products?.length < 12) {
+      setSelectedFilters(prev => ({ ...prev, page: 1 }));
+    }
+  }, [products]);
+
+  const lastIndex = selectedFilters.page * 12;
   const firstIndex = lastIndex - 12;
-  const results = products?.slice(firstIndex, lastIndex);
+
+  const results = products?.length < 12 ? products : products?.slice(firstIndex, lastIndex);
 
   const paginate = pageNumber => {
-    setCurrentPage(pageNumber);
-    history.push(`${history?.location?.pathname}?page=${pageNumber}`);
+    setSelectedFilters({ ...selectedFilters, page: pageNumber });
   };
 
   if (isLoading) {
@@ -53,9 +55,9 @@ const ProductList = () => {
       </div>
       <div>
         <Pagination
-          numberOfPages={Math.round(products?.length / 12 + 1)}
+          numberOfPages={Math.ceil(products?.length / 12)}
           paginate={paginate}
-          currentPage={currentPage}
+          currentPage={selectedFilters.page}
         />
       </div>
     </div>

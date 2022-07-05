@@ -13,7 +13,7 @@ const Header = () => {
   const [searchText, setSearchText] = useState('');
 
   const handleClick = () => {
-    setSelectedFilters({ color: '', brand: '', sort: '', search: '' });
+    setSelectedFilters({ color: '', brand: '', sort: '', search: '', page: 1 });
     setSearchText('');
   };
 
