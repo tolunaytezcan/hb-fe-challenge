@@ -6,6 +6,7 @@
   line-height: $xmedium;
   position: relative;
   max-width: 250px;
+  cursor: pointer;
 
   &:hover {
     border: 1px solid $grey-600;
@@ -13,10 +14,6 @@
     .imageContainer {
       border: none;
       overflow: hidden;
-
-      .image {
-        transform: scale(1.02);
-      }
     }
 
     .productTitle,
@@ -44,8 +41,6 @@
       width: 100%;
       object-fit: contain;
       display: block;
-
-      transition: transform 0.3s ease-in;
     }
   }
 
