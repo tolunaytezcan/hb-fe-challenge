@@ -14,7 +14,13 @@ const ProductList = () => {
   const { selectedFilters, setSelectedFilters } = useFilter();
 
   useEffect(() => {
+    //  When the user uses filtering, pagination, and search at the same time,
+    //  we're redirecting the page count to 1.
+
     if (products?.length < 12) {
+      setSelectedFilters(prev => ({ ...prev, page: 1 }));
+    }
+    if (products?.length > 12 && selectedFilters.page > 1) {
       setSelectedFilters(prev => ({ ...prev, page: 1 }));
     }
   }, [products]);
