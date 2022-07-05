@@ -13,7 +13,7 @@
     grid-template-columns: repeat(3, minmax(211px, 349.33px));
   }
   @media (max-width: 768px) {
-    grid-template-columns:  repeat(2, minmax(211px, 349.33px));
+    grid-template-columns: repeat(2, minmax(211px, 349.33px));
   }
   @media (max-width: 512px) {
     grid-template-columns: 1fr;
@@ -23,7 +23,7 @@
 .NoResultWrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 50px;
 }
 .NoResultContainer {
   display: flex;

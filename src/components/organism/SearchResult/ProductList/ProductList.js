@@ -1,10 +1,13 @@
+import { useEffect } from 'react';
+
 import ProductCard from 'components/molecules/ProductCard/ProductCard';
 import Pagination from 'components/organism/Pagination/Pagination';
 import { useFilter, useProducts } from 'hooks';
 
 import styles from 'components/organism/SearchResult/ProductList/ProductList.module.scss';
 import Search from 'assets/Search.svg';
-import { useEffect } from 'react';
+import Spinner from 'assets/Spinner.svg';
+import NoResult from 'assets/NoResult.svg';
 
 const ProductList = () => {
   const { products, isLoading, isError } = useProducts();
@@ -18,19 +21,28 @@ const ProductList = () => {
 
   const lastIndex = selectedFilters.page * 12;
   const firstIndex = lastIndex - 12;
-
   const results = products?.length < 12 ? products : products?.slice(firstIndex, lastIndex);
 
-  const paginate = pageNumber => {
-    setSelectedFilters({ ...selectedFilters, page: pageNumber });
-  };
-
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className={styles.NoResultWrapper}>
+        <div className={styles.NoResultContainer}>
+          <img src={Spinner} alt="Spinner" width={72} height={72} />
+          <span className={styles.NoResultText}>Yükleniyor</span>
+        </div>
+      </div>
+    );
   }
 
   if (isError) {
-    return <div>Error</div>;
+    return (
+      <div className={styles.NoResultWrapper}>
+        <div className={styles.NoResultContainer}>
+          <img src={NoResult} alt="No Product" width={72} height={72} />
+          <span className={styles.NoResultText}>Hata! Üzgünüz bir sorunla karşılaştık.</span>
+        </div>
+      </div>
+    );
   }
 
   if (results.length === 0) {
@@ -45,6 +57,10 @@ const ProductList = () => {
       </div>
     );
   }
+
+  const paginate = pageNumber => {
+    setSelectedFilters({ ...selectedFilters, page: pageNumber });
+  };
 
   return (
     <div>
