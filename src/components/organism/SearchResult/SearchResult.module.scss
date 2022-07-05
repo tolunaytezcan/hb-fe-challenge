@@ -22,3 +22,20 @@
     }
   }
 }
+
+.NoResultWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.NoResultContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.NoResultText {
+  font-size: $xmedium;
+  font-weight: $fw-500;
+  color: $black-100;
+  margin-bottom: $small;
+}
