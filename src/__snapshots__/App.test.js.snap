@@ -1,0 +1,684 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project should be worked without crash App component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="headerWrapper"
+      >
+        <div
+          class="logoContainer"
+        >
+          <img
+            alt="Logo icon"
+            class="hbLogo"
+            src="Logo.svg"
+          />
+        </div>
+        <div
+          class="searchInputContainer"
+        >
+          <img
+            alt="Search icon"
+            class="searchIcon"
+            src="Search.svg"
+          />
+          <input
+            class="searchInput"
+            placeholder="25 milyon'dan fazla ürün içerisinde ara"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="cartContainer"
+        >
+          <button
+            class="buttonContainer  undefined"
+          >
+            <span>
+              Sepetim
+            </span>
+            <span
+              class="quantityBadge"
+            >
+              1
+            </span>
+          </button>
+          <div
+            class="cart"
+          >
+            <div
+              class="cartContainer"
+            >
+              <div
+                class="itemContainer"
+              >
+                <div
+                  class="imageContainer"
+                >
+                  <img
+                    alt="cart-product-image"
+                    class="image"
+                    src="https://productimages.hepsiburada.net/s/49/400-592/10986385899570.jpg"
+                  />
+                </div>
+                <div
+                  class="titleAndButtonContainer"
+                >
+                  <p
+                    class="title"
+                  >
+                    iPhone 12 128GB
+                  </p>
+                  <button
+                    class="buttonContainer chartRemove undefined"
+                  >
+                    <span>
+                      Kaldır
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="searchResultWrapper"
+      >
+        <div
+          class="SubHeaderContainer"
+        >
+          <div
+            class="SubHeader"
+          >
+            <span
+              class="PageTitle"
+            >
+              Cep Telefonu Fiyatları ve Modelleri
+            </span>
+            <span
+              class="SearchTextContainer"
+            />
+          </div>
+          <div>
+            <div
+              class="SelectboxContainer"
+            >
+              <button
+                class="buttonContainer  buttonIcon"
+              >
+                <span>
+                  Sıralama
+                </span>
+                <img
+                  alt="buttonIcon"
+                  src="DownArrow.svg"
+                />
+              </button>
+              <div
+                class="SelectboxOptions"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="filterAndProducts"
+        >
+          <div
+            class="sideBarContainer"
+          >
+            <div
+              class="SidebarContainer"
+            >
+              <p
+                class="FilterName"
+              >
+                Renk
+              </p>
+              <ul
+                class="FilterList"
+              >
+                <li
+                  class="Element "
+                >
+                  <span>
+                    Siyah
+                  </span>
+                  <span>
+                    (
+                    1
+                    )
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="SidebarContainer"
+            >
+              <p
+                class="SortName"
+              >
+                Sıralama
+              </p>
+              <ul
+                class="SortList"
+              />
+            </div>
+            <div
+              class="SidebarContainer"
+            >
+              <p
+                class="FilterName"
+              >
+                Marka
+              </p>
+              <ul
+                class="FilterList"
+              >
+                <li
+                  class="Element "
+                >
+                  <span>
+                    Apple
+                  </span>
+                  <span>
+                    (
+                    1
+                    )
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div
+              class="productListContainer"
+            >
+              <div
+                class="productCardContainer"
+              >
+                <div
+                  class="imageContainer"
+                >
+                  <img
+                    class="image"
+                    src="https://productimages.hepsiburada.net/s/49/400-592/10986385899570.jpg"
+                  />
+                </div>
+                <div
+                  class="productProperties"
+                >
+                  <div>
+                    <p
+                      class="productTitle"
+                    >
+                      iPhone 11 64GB
+                    </p>
+                    <p
+                      class="productbrand"
+                    >
+                      <span>
+                        Marka: 
+                      </span>
+                      Apple
+                    </p>
+                    <p
+                      class="productColor"
+                    >
+                      <span>
+                        Renk: 
+                      </span>
+                      Siyah
+                    </p>
+                    <p
+                      class="discountedPrice"
+                    >
+                      12.276,00
+                       
+                      TL
+                    </p>
+                  </div>
+                  <div
+                    class="prevPriceContainer"
+                  >
+                    <span
+                      class="prevPrice"
+                    >
+                      13.950,00
+                       TL
+                    </span>
+                    <span
+                      class="discountRate"
+                    >
+                      12
+                      %
+                    </span>
+                  </div>
+                  <div
+                    class="productCartButton"
+                  >
+                    <button
+                      class="buttonContainer orange undefined"
+                      disabled=""
+                    >
+                      <span>
+                        Bu ürün zaten sepetinizde ekli
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="PaginationContainer"
+              >
+                <span
+                  class="arrowButton FirstArrow"
+                >
+                  &lt;&lt;
+                </span>
+                <span
+                  class="arrowButton"
+                >
+                  &lt;
+                </span>
+                <ul
+                  class="PaginationList"
+                >
+                  <li
+                    class="activeNumber"
+                  >
+                    <span
+                      class="numberButton"
+                    >
+                      1
+                    </span>
+                  </li>
+                </ul>
+                <span
+                  class="arrowButton"
+                >
+                  &gt;
+                </span>
+                <span
+                  class="arrowButton LastArrow"
+                >
+                  &gt;&gt;
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="headerWrapper"
+    >
+      <div
+        class="logoContainer"
+      >
+        <img
+          alt="Logo icon"
+          class="hbLogo"
+          src="Logo.svg"
+        />
+      </div>
+      <div
+        class="searchInputContainer"
+      >
+        <img
+          alt="Search icon"
+          class="searchIcon"
+          src="Search.svg"
+        />
+        <input
+          class="searchInput"
+          placeholder="25 milyon'dan fazla ürün içerisinde ara"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="cartContainer"
+      >
+        <button
+          class="buttonContainer  undefined"
+        >
+          <span>
+            Sepetim
+          </span>
+          <span
+            class="quantityBadge"
+          >
+            1
+          </span>
+        </button>
+        <div
+          class="cart"
+        >
+          <div
+            class="cartContainer"
+          >
+            <div
+              class="itemContainer"
+            >
+              <div
+                class="imageContainer"
+              >
+                <img
+                  alt="cart-product-image"
+                  class="image"
+                  src="https://productimages.hepsiburada.net/s/49/400-592/10986385899570.jpg"
+                />
+              </div>
+              <div
+                class="titleAndButtonContainer"
+              >
+                <p
+                  class="title"
+                >
+                  iPhone 12 128GB
+                </p>
+                <button
+                  class="buttonContainer chartRemove undefined"
+                >
+                  <span>
+                    Kaldır
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="searchResultWrapper"
+    >
+      <div
+        class="SubHeaderContainer"
+      >
+        <div
+          class="SubHeader"
+        >
+          <span
+            class="PageTitle"
+          >
+            Cep Telefonu Fiyatları ve Modelleri
+          </span>
+          <span
+            class="SearchTextContainer"
+          />
+        </div>
+        <div>
+          <div
+            class="SelectboxContainer"
+          >
+            <button
+              class="buttonContainer  buttonIcon"
+            >
+              <span>
+                Sıralama
+              </span>
+              <img
+                alt="buttonIcon"
+                src="DownArrow.svg"
+              />
+            </button>
+            <div
+              class="SelectboxOptions"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="filterAndProducts"
+      >
+        <div
+          class="sideBarContainer"
+        >
+          <div
+            class="SidebarContainer"
+          >
+            <p
+              class="FilterName"
+            >
+              Renk
+            </p>
+            <ul
+              class="FilterList"
+            >
+              <li
+                class="Element "
+              >
+                <span>
+                  Siyah
+                </span>
+                <span>
+                  (
+                  1
+                  )
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="SidebarContainer"
+          >
+            <p
+              class="SortName"
+            >
+              Sıralama
+            </p>
+            <ul
+              class="SortList"
+            />
+          </div>
+          <div
+            class="SidebarContainer"
+          >
+            <p
+              class="FilterName"
+            >
+              Marka
+            </p>
+            <ul
+              class="FilterList"
+            >
+              <li
+                class="Element "
+              >
+                <span>
+                  Apple
+                </span>
+                <span>
+                  (
+                  1
+                  )
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div
+            class="productListContainer"
+          >
+            <div
+              class="productCardContainer"
+            >
+              <div
+                class="imageContainer"
+              >
+                <img
+                  class="image"
+                  src="https://productimages.hepsiburada.net/s/49/400-592/10986385899570.jpg"
+                />
+              </div>
+              <div
+                class="productProperties"
+              >
+                <div>
+                  <p
+                    class="productTitle"
+                  >
+                    iPhone 11 64GB
+                  </p>
+                  <p
+                    class="productbrand"
+                  >
+                    <span>
+                      Marka: 
+                    </span>
+                    Apple
+                  </p>
+                  <p
+                    class="productColor"
+                  >
+                    <span>
+                      Renk: 
+                    </span>
+                    Siyah
+                  </p>
+                  <p
+                    class="discountedPrice"
+                  >
+                    12.276,00
+                     
+                    TL
+                  </p>
+                </div>
+                <div
+                  class="prevPriceContainer"
+                >
+                  <span
+                    class="prevPrice"
+                  >
+                    13.950,00
+                     TL
+                  </span>
+                  <span
+                    class="discountRate"
+                  >
+                    12
+                    %
+                  </span>
+                </div>
+                <div
+                  class="productCartButton"
+                >
+                  <button
+                    class="buttonContainer orange undefined"
+                    disabled=""
+                  >
+                    <span>
+                      Bu ürün zaten sepetinizde ekli
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="PaginationContainer"
+            >
+              <span
+                class="arrowButton FirstArrow"
+              >
+                &lt;&lt;
+              </span>
+              <span
+                class="arrowButton"
+              >
+                &lt;
+              </span>
+              <ul
+                class="PaginationList"
+              >
+                <li
+                  class="activeNumber"
+                >
+                  <span
+                    class="numberButton"
+                  >
+                    1
+                  </span>
+                </li>
+              </ul>
+              <span
+                class="arrowButton"
+              >
+                &gt;
+              </span>
+              <span
+                class="arrowButton LastArrow"
+              >
+                &gt;&gt;
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

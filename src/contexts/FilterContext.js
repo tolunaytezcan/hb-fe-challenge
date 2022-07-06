@@ -20,16 +20,6 @@ export const FilterProvider = ({ children }) => {
     page: 1
   });
 
-  const clearFilters = () => {
-    setSelectedFilters({
-      color: '',
-      sort: '',
-      search: '',
-      brand: '',
-      page: 1
-    });
-  };
-
   let query = useQuery();
 
   const colorQuery = query.get('color');
@@ -52,7 +42,7 @@ export const FilterProvider = ({ children }) => {
     );
   }, [selectedFilters]);
 
-  const values = { selectedFilters, setSelectedFilters, clearFilters };
+  const values = { selectedFilters, setSelectedFilters };
 
   return <FilterContext.Provider value={values}>{children}</FilterContext.Provider>;
 };

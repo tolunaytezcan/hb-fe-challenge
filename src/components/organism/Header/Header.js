@@ -8,18 +8,24 @@ import Logo from 'assets/Logo.svg';
 import Cart from './Cart/Cart';
 
 const Header = memo(() => {
-  const { clearFilters } = useFilter();
+  const { setSelectedFilters } = useFilter();
   const { cartProducts } = useCart();
   const [searchText, setSearchText] = useState('');
 
-  const handleClick = () => {
-    clearFilters();
+  const handleClickLogo = () => {
+    setSelectedFilters({
+      color: '',
+      sort: '',
+      search: '',
+      brand: '',
+      page: 1
+    });
     setSearchText('');
   };
 
   return (
     <div className={style.headerWrapper}>
-      <div className={style.logoContainer} onClick={handleClick}>
+      <div className={style.logoContainer} onClick={handleClickLogo}>
         <img className={style.hbLogo} src={Logo} alt="Logo icon" />
       </div>
       <div className={style.searchInputContainer}>
