@@ -13,7 +13,6 @@ describe('Filter context test', () => {
           <FilterContext.Consumer>
             {({ selectedFilters }) => {
               filters = selectedFilters;
-              console.log('filters:', filters);
             }}
           </FilterContext.Consumer>
         </FilterProvider>
