@@ -29,11 +29,21 @@ export const FilterProvider = ({ children }) => {
   const pageQuery = query.get('page');
 
   useEffect(() => {
-    setSelectedFilters(prev => ({ ...prev, brand: brandQuery }));
-    setSelectedFilters(prev => ({ ...prev, color: colorQuery }));
-    setSelectedFilters(prev => ({ ...prev, sort: sortQuery }));
-    setSelectedFilters(prev => ({ ...prev, search: searchQuery }));
-    setSelectedFilters(prev => ({ ...prev, page: +pageQuery }));
+    if (colorQuery) {
+      setSelectedFilters(prev => ({ ...prev, brand: brandQuery }));
+    }
+    if (brandQuery) {
+      setSelectedFilters(prev => ({ ...prev, color: colorQuery }));
+    }
+    if (sortQuery) {
+      setSelectedFilters(prev => ({ ...prev, sort: sortQuery }));
+    }
+    if (searchQuery) {
+      setSelectedFilters(prev => ({ ...prev, search: searchQuery }));
+    }
+    if (+pageQuery) {
+      setSelectedFilters(prev => ({ ...prev, page: +pageQuery }));
+    }
   }, []);
 
   useEffect(() => {

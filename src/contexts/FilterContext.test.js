@@ -23,11 +23,11 @@ describe('Filter context test', () => {
 
   it('should have the filters', () => {
     expect(filters).toEqual({
-      color: null,
-      brand: null,
-      sort: null,
-      search: null,
-      page: 0
+      color: '',
+      brand: '',
+      sort: '',
+      search: '',
+      page: 1
     });
   });
 });
