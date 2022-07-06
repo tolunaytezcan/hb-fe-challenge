@@ -60,7 +60,7 @@ describe('Search result component test', () => {
       </Router>
     );
 
-    expect(component).toBeTruthy();
+    expect(component).toMatchSnapshot();
   });
 
   it('should render no result  if products are empty', () => {

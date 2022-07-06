@@ -59,6 +59,6 @@ describe('Product card component test', () => {
       </Router>
     );
 
-    expect(component).toBeTruthy();
+    expect(component).toMatchSnapshot();
   });
 });

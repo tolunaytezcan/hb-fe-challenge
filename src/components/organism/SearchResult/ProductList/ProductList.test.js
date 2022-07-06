@@ -60,8 +60,9 @@ describe('Product List component test', () => {
       </Router>
     );
 
-    expect(component).toBeTruthy();
+    expect(component).toMatchSnapshot();
   });
+
   it('should have pagination', () => {
     const component = render(
       <Router>
