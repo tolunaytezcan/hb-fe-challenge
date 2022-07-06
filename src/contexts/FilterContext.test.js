@@ -3,7 +3,7 @@ import FilterContext, { FilterProvider } from './FilterContext';
 import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 
-describe('filter context should be rendered', () => {
+describe('Filter context test', () => {
   let filters = {};
 
   beforeEach(() => {

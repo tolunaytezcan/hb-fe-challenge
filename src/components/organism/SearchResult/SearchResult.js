@@ -17,7 +17,7 @@ const SearchResult = memo(() => {
   const firstIndex = lastIndex - 12;
   const results = products?.length < 12 ? products : products?.slice(firstIndex, lastIndex);
 
-  if (results.length === 0) {
+  if (results?.length === 0) {
     return (
       <div className={style.NoResultWrapper}>
         <div className={style.NoResultContainer}>

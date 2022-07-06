@@ -3,7 +3,7 @@ import ProductList from 'components/organism/SearchResult/ProductList/ProductLis
 import ProductsContext from 'contexts/ProductsContext';
 import FilterContext from './FilterContext';
 
-describe('product context should be rendered', () => {
+describe('Product context test', () => {
   const products = [
     {
       id: 1,
@@ -39,7 +39,7 @@ describe('product context should be rendered', () => {
     };
   };
 
-  it('should be rendered products list', () => {
+  it('should be render correctly', () => {
     const component = render(
       <FilterContext.Provider
         value={{

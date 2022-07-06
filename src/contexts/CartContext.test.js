@@ -3,7 +3,7 @@ import CartContext, { CartProvider } from './CartContext';
 import { render } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 
-describe('Cart Context', () => {
+describe('Cart Context test', () => {
   let visibility;
   let products;
   let openModal;
