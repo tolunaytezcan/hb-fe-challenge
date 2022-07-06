@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Project should be worked without crash App component 1`] = `
+exports[`Project should be worked without crash should be rendered app component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

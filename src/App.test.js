@@ -59,7 +59,7 @@ describe('Project should be worked without crash', () => {
     };
   };
 
-  it('App component', () => {
+  it('should be rendered app component', () => {
     const component = render(
       <Router>
         <FilterContext.Provider
