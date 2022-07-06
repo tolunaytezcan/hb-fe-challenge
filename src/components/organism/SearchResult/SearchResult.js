@@ -17,23 +17,6 @@ const SearchResult = memo(() => {
   const firstIndex = lastIndex - 12;
   const results = products?.length < 12 ? products : products?.slice(firstIndex, lastIndex);
 
-  if (results?.length === 0) {
-    return (
-      <div className={style.NoResultWrapper}>
-        <div className={style.NoResultContainer}>
-          <img src={Search} alt="No Product" width={72} height={72} />
-          <span className={style.NoResultText}>
-            {selectedFilters?.search ? (
-              <p>{selectedFilters?.search} ile ilgili sonuç bulunamamıştır.</p>
-            ) : (
-              <p>Sonuç bulunamadı.</p>
-            )}
-          </span>
-        </div>
-      </div>
-    );
-  }
-
   if (isLoading) {
     return (
       <div className={style.NoResultWrapper}>
@@ -51,6 +34,23 @@ const SearchResult = memo(() => {
         <div className={style.NoResultContainer}>
           <img src={NoResult} alt="No Product" width={72} height={72} />
           <span className={style.NoResultText}>Hata! Üzgünüz bir sorunla karşılaştık.</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isLoading && !isError && results?.length === 0) {
+    return (
+      <div className={style.NoResultWrapper}>
+        <div className={style.NoResultContainer}>
+          <img src={Search} alt="No Product" width={72} height={72} />
+          <span className={style.NoResultText}>
+            {selectedFilters?.search ? (
+              <p>{selectedFilters?.search} ile ilgili sonuç bulunamamıştır.</p>
+            ) : (
+              <p>Sonuç bulunamadı.</p>
+            )}
+          </span>
         </div>
       </div>
     );
