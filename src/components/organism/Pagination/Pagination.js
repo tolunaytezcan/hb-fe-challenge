@@ -27,7 +27,7 @@ const Pagination = memo(({ currentPage, numberOfPages, paginate }) => {
   };
 
   return (
-    <div className={styles.PaginationContainer}>
+    <div className={styles.PaginationContainer} data-testid="pagination">
       <span className={`${styles.arrowButton} ${styles.FirstArrow}`} onClick={goToFirstPage}>
         {'<<'}
       </span>

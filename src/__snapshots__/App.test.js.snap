@@ -275,6 +275,7 @@ Object {
             <div>
               <div
                 class="PaginationContainer"
+                data-testid="pagination"
               >
                 <span
                   class="arrowButton FirstArrow"
@@ -587,6 +588,7 @@ Object {
           <div>
             <div
               class="PaginationContainer"
+              data-testid="pagination"
             >
               <span
                 class="arrowButton FirstArrow"
