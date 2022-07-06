@@ -1,25 +1,12 @@
 import { render } from '@testing-library/react';
 import ProductList from 'components/organism/SearchResult/ProductList/ProductList';
-import ProductsContext from 'contexts/ProductsContext';
+import ProductsContext, { ProductsProvider } from 'contexts/ProductsContext';
 import FilterContext from './FilterContext';
 
 describe('Product context test', () => {
-  const products = [
-    {
-      id: 1,
-      brand: 'Apple',
-      title: 'iPhone 11 64GB',
-      price: 13950,
-      color: 'Siyah',
-      images: [
-        {
-          image: 'https://productimages.hepsiburada.net/s/49/400-592/10986385899570.jpg'
-        }
-      ],
-      discountRate: 12,
-      createdDate: '2022-07-02T17:51:41.382Z'
-    }
-  ];
+  let items;
+  let loading;
+  let error;
 
   let selectedFilters = {
     color: '',
@@ -39,19 +26,38 @@ describe('Product context test', () => {
     };
   };
 
-  it('should be render correctly', () => {
-    const component = render(
+  beforeEach(() => {
+    render(
       <FilterContext.Provider
         value={{
           selectedFilters,
           setSelectedFilters
         }}>
-        <ProductsContext.Provider value={{ products }}>
+        <ProductsProvider>
+          <ProductsContext.Consumer>
+            {({ products, isLoading, isError }) => {
+              items = products;
+              loading = isLoading;
+              error = isError;
+            }}
+          </ProductsContext.Consumer>
+
           <ProductList />
-        </ProductsContext.Provider>
+        </ProductsProvider>
       </FilterContext.Provider>
     );
+  });
 
-    expect(component).toMatchSnapshot();
+  it('should be render', () => {
+    expect(items).toMatchSnapshot();
+  });
+  it('should not have any products', () => {
+    expect(items).toEqual([]);
+  });
+  it('should be loading set to true ', () => {
+    expect(loading).toBe(true);
+  });
+  it('should not be any error', () => {
+    expect(error).toBe(false);
   });
 });

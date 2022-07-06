@@ -47,5 +47,12 @@
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
     "webpack": "^5.73.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/constants/index.js"
+    ]
   }
 }
